@@ -1,0 +1,38 @@
+.manifold-nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #555555;
+  border-radius: 26px;
+
+  .tab-switch-container {
+    display: flex;
+    flex-direction: row;
+
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  .tab-switch {
+    display: inline-block;
+
+    flex-grow: 1;
+    height: 6px;
+    background: #7e7e7e;
+
+    margin: 0 4px;
+
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover:not(.active) {
+      background: #aaaaaa;
+    }
+
+    &.active {
+      background: #eaeaea;
+    }
+  }
+}

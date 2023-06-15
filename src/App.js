@@ -5,13 +5,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { ManifoldNav } from 'components/ManifoldNav/ManifoldNav';
+
 function App() {
   return (
     <div className="App">
-      <Container>
+      <Container fluid className='h-100 py-3'>
         <Row className='h-100'>
           <Col sm={2}>
-            <div className='nav-column'>Nav</div>
+            <ManifoldNav />
           </Col>
           <Col sm={10}>
             <div className='test'>
