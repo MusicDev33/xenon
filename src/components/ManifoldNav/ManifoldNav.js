@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import './ManifoldNav.scss';
 
 import { Collaborators } from './Collaborators';
-import { CurrentBooks } from './CurrentBooks';
-import { Toolbar } from './Toolbar';
+import { MyNotes } from './MyNotes';
+import { Librarian } from './Librarian';
+import { Checkout } from './Checkout';
 
 export const ManifoldNav = () => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -16,13 +17,15 @@ export const ManifoldNav = () => {
   const renderMenu = () => {
     switch (currentTab) {
       case 0:
-        return <Toolbar />;
+        return <MyNotes />;
       case 1:
-        return <CurrentBooks />;
+        return <Checkout />;
       case 2:
         return <Collaborators />;
+      case 3:
+        return <Librarian />;
       default:
-        return <Toolbar />;
+        return <MyNotes />;
     }
   }
 
@@ -45,7 +48,6 @@ export const ManifoldNav = () => {
         <span onClick={() => setCurrentTab(1)} className={getTabClass(1)}></span>
         <span onClick={() => setCurrentTab(2)} className={getTabClass(2)}></span>
         <span onClick={() => setCurrentTab(3)} className={getTabClass(3)}></span>
-        <span onClick={() => setCurrentTab(4)} className={getTabClass(4)}></span>
       </div>
     </div>
   )
