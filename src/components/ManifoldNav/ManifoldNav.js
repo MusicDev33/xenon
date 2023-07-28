@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './ManifoldNav.scss';
 
@@ -9,6 +10,7 @@ import { Checkout } from './Checkout';
 
 export const ManifoldNav = () => {
   const [currentTab, setCurrentTab] = useState(0);
+  const nav = useNavigate();
 
   useEffect(() => {
 
@@ -29,6 +31,18 @@ export const ManifoldNav = () => {
     }
   }
 
+  const handleTabClick = (tabNum) => {
+    const routes = [
+      '/notes',
+      '/checkout',
+      '/collab',
+      '/librarian',
+    ]
+
+    setCurrentTab(tabNum);
+    nav(routes[tabNum]);
+  }
+
   const getTabClass = (tabNumber) => {
     if (tabNumber === currentTab) {
       return 'tab-switch active';
@@ -44,10 +58,10 @@ export const ManifoldNav = () => {
       </div>
 
       <div className='tab-switch-container pb-3'>
-        <span onClick={() => setCurrentTab(0)} className={getTabClass(0)}></span>
-        <span onClick={() => setCurrentTab(1)} className={getTabClass(1)}></span>
-        <span onClick={() => setCurrentTab(2)} className={getTabClass(2)}></span>
-        <span onClick={() => setCurrentTab(3)} className={getTabClass(3)}></span>
+        <span onClick={() => handleTabClick(0)} className={getTabClass(0)}></span>
+        <span onClick={() => handleTabClick(1)} className={getTabClass(1)}></span>
+        <span onClick={() => handleTabClick(2)} className={getTabClass(2)}></span>
+        <span onClick={() => handleTabClick(3)} className={getTabClass(3)}></span>
       </div>
     </div>
   )

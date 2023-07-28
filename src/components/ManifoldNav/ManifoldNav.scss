@@ -36,3 +36,28 @@
     }
   }
 }
+
+.man-component {
+  .title {
+    color: #fafafa;
+  }
+
+  .man-sub-component {
+    transition: 0.3s;
+    cursor: pointer;
+
+    font-weight: 600;
+    font-size: 110%;
+
+    background: #727272;
+
+    &.button {
+      border-radius: 12px;
+      padding: 6px 12px;
+      
+      &:hover {
+        background: #e017ae;
+      }
+    }
+  }
+}
