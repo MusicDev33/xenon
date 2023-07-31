@@ -26,7 +26,7 @@ function App() {
             </Col>
             <Col sm={10} className='router-container'>
               <Routes>
-                <Route path='/notes' element={<PMyNotes />} />
+                <Route path='/' element={<PMyNotes />} />
                 <Route path='/checkout' element={<PCheckout />} />
                 <Route path='/collab' element={<PCollab />} />
                 <Route path='/librarian' element={<PLibrarian />} />

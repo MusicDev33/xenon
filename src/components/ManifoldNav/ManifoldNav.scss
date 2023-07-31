@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  background: #555555;
+  background: #6b6b6b;
   border-radius: 26px;
 
   .tab-switch-container {
@@ -19,20 +19,35 @@
     display: inline-block;
 
     flex-grow: 1;
-    height: 6px;
-    background: #7e7e7e;
 
     margin: 0 4px;
+    padding: 13px 0;
+    border-radius: 999px;
 
     cursor: pointer;
     transition: 0.3s all;
 
     &:hover:not(.active) {
-      background: #aaaaaa;
+      background: #faaeda;
     }
 
     &.active {
-      background: #eaeaea;
+      background: #d34cc8;
+
+      .tab-switch-icon {
+        color: white;
+      }
+    }
+
+    .icon-container {
+      text-align: center!important;
+    }
+
+    .tab-switch-icon {
+      transition: 0.3s all;
+      font-size: 200%;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

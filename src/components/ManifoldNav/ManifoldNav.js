@@ -8,6 +8,9 @@ import { MyNotes } from './MyNotes';
 import { Librarian } from './Librarian';
 import { Checkout } from './Checkout';
 
+import { IconContext } from 'react-icons';
+import { FaBook, FaUserGroup, FaFileLines, FaCartShopping } from 'react-icons/fa6';
+
 export const ManifoldNav = () => {
   const [currentTab, setCurrentTab] = useState(0);
   const nav = useNavigate();
@@ -33,7 +36,7 @@ export const ManifoldNav = () => {
 
   const handleTabClick = (tabNum) => {
     const routes = [
-      '/notes',
+      '/',
       '/checkout',
       '/collab',
       '/librarian',
@@ -58,10 +61,37 @@ export const ManifoldNav = () => {
       </div>
 
       <div className='tab-switch-container pb-3'>
-        <span onClick={() => handleTabClick(0)} className={getTabClass(0)}></span>
-        <span onClick={() => handleTabClick(1)} className={getTabClass(1)}></span>
-        <span onClick={() => handleTabClick(2)} className={getTabClass(2)}></span>
-        <span onClick={() => handleTabClick(3)} className={getTabClass(3)}></span>
+        <span onClick={() => handleTabClick(0)} className={getTabClass(0)}>
+          <IconContext.Provider value={{ className: 'tab-switch-icon' }}>
+            <div title='My Notes' className='icon-container'>
+              <FaFileLines />
+            </div>
+          </IconContext.Provider>
+        </span>
+
+        <span onClick={() => handleTabClick(1)} className={getTabClass(1)}>
+          <IconContext.Provider value={{ className: 'tab-switch-icon' }}>
+            <div title='Checkout' className='icon-container'>
+              <FaCartShopping />
+            </div>
+          </IconContext.Provider>
+        </span>
+
+        <span onClick={() => handleTabClick(2)} className={getTabClass(2)}>
+          <IconContext.Provider value={{ className: 'tab-switch-icon' }}>
+            <div title='Collaborate' className='icon-container'>
+              <FaUserGroup />
+            </div>
+          </IconContext.Provider>
+        </span>
+
+        <span onClick={() => handleTabClick(3)} className={getTabClass(3)}>
+          <IconContext.Provider value={{ className: 'tab-switch-icon' }}>
+            <div title='Librarian' className='icon-container'>
+              <FaBook />
+            </div>
+          </IconContext.Provider>
+        </span>
       </div>
     </div>
   )
