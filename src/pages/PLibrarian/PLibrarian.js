@@ -12,18 +12,22 @@ export const PLibrarian = () => {
   const sources = [
     {
       sourceName: 'Test 1',
+      author: 'Test Author',
       sourceId: 'test1'
     },
     {
       sourceName: 'Test 2',
+      author: 'Test Author',
       sourceId: 'test2'
     },
     {
       sourceName: 'Test 3',
+      author: 'Test Author',
       sourceId: 'test3'
     },
     {
       sourceName: 'Test 4',
+      author: 'Test Author',
       sourceId: 'test4'
     },
   ]
@@ -32,7 +36,7 @@ export const PLibrarian = () => {
     <Container fluid>
       <Row>
         <Col sm={3}>
-          <div className="xsource-btn add" title="Add a book">
+          <div className="xsource add" title="Add a book">
             <IconContext.Provider value={{ className: 'plus-btn' }}>
               <FaPlus />
             </IconContext.Provider>
@@ -41,8 +45,22 @@ export const PLibrarian = () => {
 
         {sources.map((source) => (
           <Col sm={3}>
-            <div className="xsource-btn">
-              {source.sourceName}
+            <div className="xsource">
+              <section className="sc-container">
+                <div>
+                  <div className="title">
+                    {source.sourceName}
+                  </div>
+
+                  <div className="author">
+                    {source.author}
+                  </div>
+                </div>
+
+                <button className="notes-btn">
+                  Notes
+                </button>
+              </section>
             </div>
           </Col>
         ))}
