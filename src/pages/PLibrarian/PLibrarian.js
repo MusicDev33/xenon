@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import './PLibrarian.scss';
 
 import { IconContext } from "react-icons";
@@ -9,6 +10,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export const PLibrarian = () => {
+  const nav = useNavigate();
+
   const sources = [
     {
       sourceName: 'Test 1',
@@ -31,6 +34,10 @@ export const PLibrarian = () => {
       sourceId: 'test4'
     },
   ]
+
+  const handleNotesClick = (sourceId) => {
+    nav(`/notes/${sourceId}`);
+  }
   
   return (
     <Container fluid>
@@ -56,8 +63,10 @@ export const PLibrarian = () => {
                     {source.author}
                   </div>
                 </div>
-
-                <button className="notes-btn">
+                
+                <button className="notes-btn" onClick={() => {
+                  handleNotesClick(source.sourceId)
+                }}>
                   Notes
                 </button>
               </section>

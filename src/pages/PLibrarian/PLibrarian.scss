@@ -53,6 +53,11 @@
     padding: 2px 27px;
     max-width: 100px;
 
+    a {
+      text-decoration: none!important;
+      color: inherit;
+    }
+
     &:hover {
       color: white;
       background: #ff6ec3;
