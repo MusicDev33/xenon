@@ -44,9 +44,13 @@ export const PLibrarian = () => {
       <Row>
         <Col sm={3}>
           <div className="xsource add" title="Add a book">
-            <IconContext.Provider value={{ className: 'plus-btn' }}>
-              <FaPlus />
-            </IconContext.Provider>
+            <div className="w-100">
+              <input className="xsource-input" placeholder="Title" />
+              <input className="xsource-input" placeholder="Author" />
+              <input className="xsource-input" placeholder="Start URL" />
+            </div>
+
+            <button className="submit-btn">Submit</button>
           </div>
         </Col>
 

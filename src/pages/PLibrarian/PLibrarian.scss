@@ -1,5 +1,5 @@
 .xsource {
-  height: 150px;
+  height: 170px;
 
   border-radius: 18px;
   padding: 10px 13px;
@@ -11,9 +11,57 @@
 
   &.add {
     text-align: center;
-    font-size: 400%;
     color: #333333;
     cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .xsource-input {
+      width: 100%;
+
+      transition: all 0.3s;
+      border-radius: 999px;
+      outline: none!important;
+
+      border: 1px solid #c0c0c0;
+      background: #d8d8d8;
+      margin-bottom: 5px;
+      padding: 3px 14px;
+
+      &:focus {
+        border-color: #e0e0e0;
+        background: #ffffff;
+      }
+
+      &:hover:not(:focus) {
+        border-color: #cacaca;
+        background: #e2e2e2;
+      }
+    }
+
+    .submit-btn {
+      transition: all 0.3s;
+
+      border-radius: 999px;
+      border: 1px solid #ff6ec3;
+      background: white;
+      color: #ff6ec3;
+
+      padding: 2px 27px;
+      max-width: 120px;
+
+      a {
+        text-decoration: none!important;
+        color: inherit;
+      }
+
+      &:hover {
+        color: white;
+        background: #ff6ec3;
+      }
+    }
   }
 
   &:hover {
